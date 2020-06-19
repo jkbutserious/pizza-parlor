@@ -11,22 +11,22 @@
     <div class="container">
       <div>
         <form id="pizza-order">
-          <div class="form-group" id="name-group">
+          <div class="form-group panel" id="name-group">
             <label for="customer-name">Please enter a name for your order:</label>
             <input id="customer-name" class="form-control" type="text" required>
-            <!-- <button class="btn" id="name-next" type="submit">Next</button> -->
+            <button class="btn" id="name-next">Next</button>
           </div>
-          <div id="size-group">
+          <div class="panel" id="size-group">
             <select class="form-control" id="pizza-size">
               <option>Small</option>
               <option>Medium</option>
               <option>Large</option>
               <option>X-Large</option>
             </select>
-            <!-- <button class="btn" id="back-to-name">Back</button> -->
-            <!-- <button class="btn" id="size-submit" type="submit">Next</button> -->
+            <button class="btn" id="back-to-name">Back</button>
+            <button class="btn" id="size-next">Next</button>
           </div>
-          <div class="form-group" id="toppings-group">
+          <div class="form-group panel" id="toppings-group">
             <p>Please select the toppings you would like:</p>
             <label>Meats</label><br />
             <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br />
@@ -42,10 +42,10 @@
             <label>Other</label><br />
             <input type="checkbox" name="other" value="pineapple">Pineapple<br />
             <input type="checkbox" name="other" value="extra-cheese">Extra Cheese<br />
-            <!-- <button class="btn" id="back-to-size">Back</button> -->
-            <!-- <button class="btn" id="toppings-submit" type="submit">Next</button> -->
+            <button class="btn" id="back-to-size">Back</button>
+            <button class="btn" id="toppings-next">Next</button>
           </div>
-          <div id="receive-group">
+          <div class="panel" id="receive-group">
             <p>Is this order for pickup or delivery?</p>
             <div class="radio">
               <label>
@@ -60,12 +60,13 @@
               </label>
             </div>
             <button class="btn" id="back-to-toppings">Back</button>
-            <button class="btn" id="receive-submit" type="submit">Submit your order</button>
+            <button class="btn" type="submit">Submit your order</button>
           </div>
         </form>
       </div>
-      <div>
-        <p><span id="output"></span></p>
+      <div class="output">
+
+        <p><span id="price"></span></p>
       </div>
     </div>
   </body>

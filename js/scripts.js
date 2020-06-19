@@ -58,6 +58,30 @@ $(document).ready(function() {
     if (custReceive === "delivery") {
       subtotal += 3;
     }
-    $("#output").text("$" + parseFloat(subtotal).toFixed(2));
+    $("#price").text("$" + parseFloat(subtotal).toFixed(2));
+  });
+  $("#name-next").click(function() {
+    $("#name-group").toggle("slide");
+    $("#size-group").toggle("slide");
+  })
+  $("#back-to-name").click(function() {
+    $("#name-group").toggle("slide");
+    $("#size-group").toggle("slide");
+  })
+  $("#size-next").click(function() {
+    $("#size-group").toggle("slide");
+    $("#toppings-group").toggle("slide");
+  })
+  $("#back-to-size").click(function() {
+    $("#size-group").toggle("slide");
+    $("#toppings-group").toggle("slide");
+  })
+  $("#toppings-next").click(function() {
+    $("#toppings-group").toggle("slide");
+    $("#receive-group").toggle("slide");
+  })
+  $("#back-to-toppings").click(function() {
+    $("#toppings-group").toggle("slide");
+    $("#receive-group").toggle("slide");
   })
 })
