@@ -37,13 +37,13 @@
             <p>Is this order for pickup or delivery?</p>
             <div class="radio">
               <label>
-                <input type="radio" name="receive" value="Pickup" checked>
+                <input type="radio" name="receive" value="pickup" checked>
                 Pickup
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="receive" value="Delivery">
+                <input type="radio" name="receive" value="delivery">
                 Delivery
               </label>
             </div>
@@ -51,6 +51,9 @@
             <button class="btn" id="receive-submit" type="submit">Submit your order</button>
           </div>
         </form>
+      </div>
+      <div>
+        <p><span id="output"></span></p>
       </div>
     </div>
   </body>

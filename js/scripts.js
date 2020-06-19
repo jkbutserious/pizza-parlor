@@ -6,7 +6,7 @@ function PizzaOrder(name, size, toppings, receive) {
   this.receive = receive;
 }
 
-PizzaOrder.prototype.priceCalculator = function() {
+PizzaOrder.prototype.priceCalculator = function(checkedToppings) {
   let totalPrice = 0;
   // Size price calculation
   if (this.size === "Small") {
@@ -23,9 +23,9 @@ PizzaOrder.prototype.priceCalculator = function() {
   }
 
   // Toppings price calculation
-  let toppingsPrice = this.toppings.length() * 0.5;
+  let toppingsPrice = checkedToppings.length * 0.5;
   totalPrice += toppingsPrice;
-  // Receive price calculation
+  return totalPrice
 }
 // User Interface Logic
 $(document).ready(function() {
@@ -35,11 +35,18 @@ $(document).ready(function() {
     const custName = $("#customer-name").val();
     const custSize = $("#pizza-size").val();
     const custToppings = [];
+    const custReceive = $("input:radio[name=receive]:checked").val();
+    let subtotal = 0;
     $("input:checkbox[name=toppings]:checked").each(function(){ 
       custToppings.push($(this).val());
     });
-    newPizza.toppings = custToppings;
     newPizza.name = custName;
+    newPizza.toppings = custToppings;
     newPizza.size = custSize;
+    subtotal += newPizza.priceCalculator(custToppings);
+    if (custReceive === "delivery") {
+      subtotal += 3;
+    }
+    $("#output").text("$" + parseFloat(subtotal).toFixed(2));
   })
 })
