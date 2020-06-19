@@ -35,15 +35,11 @@ $(document).ready(function() {
     const custName = $("#customer-name").val();
     const size = $("#pizza-size").val();
     const test = [];
-    $("#input:checkbox[name=meat]:checked").change(function() {
-      const custToppings = $(this).val();
-      if ($(this).is(":checked")) {
-        test.push(checked);
-      }
+    $("#input:checkbox[name=meat]:checked").each(function() {
+      test.push($(this).val());
     });
     newPizza.toppings = test;
     newPizza.name = custName;
 
   })
-  
 })
