@@ -1,12 +1,13 @@
 // Business Logic
-function PizzaOrder(name, size, toppings, receive) {
-  this.name = name;
-  this.size = size;
-  this.toppings = toppings;
-  this.receive = receive;
+function PizzaOrder(name, size, meats, veggies, other) {
+  this.name = name,
+  this.size = size,
+  this.meats = meats,
+  this.veggies = veggies,
+  this.other = other
 }
 
-PizzaOrder.prototype.priceCalculator = function(checkedToppings) {
+PizzaOrder.prototype.priceCalculator = function(checkedMeats, checkedVeggies, checkedOther) {
   let totalPrice = 0;
   // Size price calculation
   if (this.size === "Small") {
@@ -23,7 +24,10 @@ PizzaOrder.prototype.priceCalculator = function(checkedToppings) {
   }
 
   // Toppings price calculation
-  let toppingsPrice = checkedToppings.length * 0.5;
+  const meatsPrice = checkedMeats.length * 0.5;
+  const veggiesPrice = checkedVeggies.length * 0.25;
+  const otherPrice = checkedOther.length * 0.35;
+  const toppingsPrice = meatsPrice + veggiesPrice + otherPrice;
   totalPrice += toppingsPrice;
   return totalPrice
 }
@@ -32,18 +36,25 @@ $(document).ready(function() {
   let newPizza = new PizzaOrder;
   $("#pizza-order").submit(function() {
     event.preventDefault();
-    const custName = $("#customer-name").val();
-    const custSize = $("#pizza-size").val();
-    const custToppings = [];
+    newPizza.name = $("#customer-name").val();
+    newPizza.size = $("#pizza-size").val();
+    newPizza.meats = [];
+    newPizza.veggies = [];
+    newPizza.other = [];
+
     const custReceive = $("input:radio[name=receive]:checked").val();
     let subtotal = 0;
-    $("input:checkbox[name=toppings]:checked").each(function(){ 
-      custToppings.push($(this).val());
+    $("input:checkbox[name=meat]:checked").each(function(){ 
+      newPizza.meats.push($(this).val());
     });
-    newPizza.name = custName;
-    newPizza.toppings = custToppings;
-    newPizza.size = custSize;
-    subtotal += newPizza.priceCalculator(custToppings);
+    $("input:checkbox[name=veggies]:checked").each(function(){ 
+      newPizza.veggies.push($(this).val());
+    });
+    $("input:checkbox[name=other]:checked").each(function(){ 
+      newPizza.other.push($(this).val());
+    });
+    
+    subtotal += newPizza.priceCalculator(newPizza.meats, newPizza.veggies, newPizza.other);
     if (custReceive === "delivery") {
       subtotal += 3;
     }
