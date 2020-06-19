@@ -7,24 +7,24 @@ function PizzaOrder(name, size, toppings, receive) {
 }
 
 PizzaOrder.prototype.priceCalculator = function() {
-  let price = 0;
+  let totalPrice = 0;
   // Size price calculation
   if (this.size === "Small") {
-    price = 7;
+    totalPrice = 7;
   }
   else if (this.size === "Medium") {
-    price = 9;
+    totalPrice = 9;
   }
   else if (this.size === "Large") {
-    price = 11;
+    totalPrice = 11;
   }
   else if (this.size === "X-Large") {
-    price = 13;
+    totalPrice = 13;
   }
 
   // Toppings price calculation
   let toppingsPrice = this.toppings.length() * 0.5;
-  price += toppingsPrice;
+  totalPrice += toppingsPrice;
   // Receive price calculation
 }
 // User Interface Logic
@@ -33,13 +33,13 @@ $(document).ready(function() {
   $("#pizza-order").submit(function() {
     event.preventDefault();
     const custName = $("#customer-name").val();
-    const size = $("#pizza-size").val();
-    const test = [];
-    $("#input:checkbox[name=meat]:checked").each(function() {
-      test.push($(this).val());
+    const custSize = $("#pizza-size").val();
+    const custToppings = [];
+    $("input:checkbox[name=toppings]:checked").each(function(){ 
+      custToppings.push($(this).val());
     });
-    newPizza.toppings = test;
+    newPizza.toppings = custToppings;
     newPizza.name = custName;
-
+    newPizza.size = custSize;
   })
 })
