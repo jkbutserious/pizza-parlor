@@ -10,9 +10,17 @@ _DETAILED DESCRIPTION_
 
 ## Specs
 
-1. OBJECTIVE
-Sample Input: 
-Sample Output: 
+1. Users should be able to create a new pizza order on the site
+Sample Input: User enters their name
+Sample Output: A new pizza object is created
+
+2. Users should be able to choose a size for their pizza order
+Sample Input: User selects a radio option for their desired pizza size
+Sample Output: The appropriate size is assigned to the pizza object and the base price is displayed
+
+3. Users should be able to choose toppings for their pizza
+Sample Input: User chooses "pepperoni" and "mushrooms" using check boxes
+Sample Output: Toppings are assigned to the pizza object and the displayed price is updated
 
 ## Setup/Installation Requirements
 
