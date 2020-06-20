@@ -99,6 +99,9 @@ $(document).ready(function() {
       return subtotal;
     };
     $("#price").text("$" + parseFloat(subtotal).toFixed(2));
+    // $("#back-to-toppings").toggle("slide");
+    // $("#submit-button").toggle("slide");
+    // $("#pizza-tracker").toggle("slide");
   });
 
  
