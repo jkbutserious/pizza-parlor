@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Pizza Parlor</title>
+    <title>Pizza by Alfredo</title>
   </head>
   <body>
     <div class="jumbotron">
@@ -65,10 +65,12 @@
                   Delivery
                 </label>
               </div>
-              <label id= "address-label" for="customer-address">Please enter your address:</label>
-              <input id="customer-address" class="form-control" type="text">
-              <button class="btn-primary" id="back-to-toppings">Back</button>
-              <button class="btn-primary" type="submit">Submit your order</button>
+              <div class="form-group">
+                <label id= "address-label" for="customer-address">Please enter your address:</label>
+                <input id="customer-address" class="form-control" type="text">
+                <button class="btn-primary" id="back-to-toppings">Back</button>
+                <button class="btn-primary" type="submit">Submit your order</button>
+              </div>
             </div>
           </form>
         </div>
@@ -78,10 +80,10 @@
             <h3><span id="your-name"></span>'s pizza:</h3>
             <ul>
               <li>Size: <span id="your-size"></span></p></li>
-              <li>Toppings: <ul id="your-toppings"></ul></li>
+              <li>Toppings: 
+                <ul id="your-toppings"></ul></li>
             </ul>
-            <h3>Price:</h3>
-            <p><span id="price"></span></p>
+            <p>Price: <span id="price"></span></p>
           </div>
         </div>
       </div>
