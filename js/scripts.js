@@ -86,7 +86,13 @@ $(document).ready(function() {
   })
   $("#toppings-next").click(function() {
     (newPizza.meats).forEach(function(element) {
-      $("your-toppings").append("<li>" + element + "</li>");
+      $("#your-toppings").append("<li>" + element + "</li>");
+    });
+    (newPizza.veggies).forEach(function(element) {
+      $("#your-toppings").append("<li>" + element + "</li>");
+    });
+    (newPizza.other).forEach(function(element) {
+      $("#your-toppings").append("<li>" + element + "</li>");
     });
     $("#toppings-group").toggle("slide");
     $("#receive-group").toggle("slide");
