@@ -36,7 +36,6 @@ $(document).ready(function() {
   let newPizza = new PizzaOrder;
   $("#pizza-order").submit(function() {
     event.preventDefault();
-    newPizza.name = $("#customer-name").val();
     newPizza.size = $("#pizza-size").val();
     newPizza.meats = [];
     newPizza.veggies = [];
@@ -61,14 +60,18 @@ $(document).ready(function() {
     $("#price").text("$" + parseFloat(subtotal).toFixed(2));
   });
   $("#name-next").click(function() {
+    newPizza.name = $("#customer-name").val();
+    $("#your-name").text(newPizza.name);
     $("#name-group").toggle("slide");
     $("#size-group").toggle("slide");
+    $("#output").show();
   })
   $("#back-to-name").click(function() {
     $("#name-group").toggle("slide");
     $("#size-group").toggle("slide");
   })
   $("#size-next").click(function() {
+    $("#your-size").text(newPizza.size)
     $("#size-group").toggle("slide");
     $("#toppings-group").toggle("slide");
   })

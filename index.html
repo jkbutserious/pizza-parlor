@@ -3,70 +3,84 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/scripts.js"></script>
     <title>Pizza Parlor</title>
   </head>
   <body>
+    <div class="jumbotron">
+      <img src="./img/pizza-by-alfredo.jpg" />
+    </div>
     <div class="container">
-      <div>
-        <form id="pizza-order">
-          <div class="form-group panel" id="name-group">
-            <label for="customer-name">Please enter a name for your order:</label>
-            <input id="customer-name" class="form-control" type="text" required>
-            <button class="btn" id="name-next">Next</button>
-          </div>
-          <div class="panel" id="size-group">
-            <select class="form-control" id="pizza-size">
-              <option>Small</option>
-              <option>Medium</option>
-              <option>Large</option>
-              <option>X-Large</option>
-            </select>
-            <button class="btn" id="back-to-name">Back</button>
-            <button class="btn" id="size-next">Next</button>
-          </div>
-          <div class="form-group panel" id="toppings-group">
-            <p>Please select the toppings you would like:</p>
-            <label>Meats</label><br />
-            <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br />
-            <input type="checkbox" name="meat" value="sausage">Sausage<br />
-            <input type="checkbox" name="meat" value="bacon">Bacon<br />
-            <input type="checkbox" name="meat" value="ham">Ham<br />
-            <input type="checkbox" name="meat" value="chicken">Chicken<br />
-            <label>Veggies</label><br />
-            <input type="checkbox" name="veggies" value="spinach">Spinach<br />
-            <input type="checkbox" name="veggies" value="mushroom">Mushroom<br />
-            <input type="checkbox" name="veggies" value="olives">Olives<br />
-            <input type="checkbox" name="veggies" value="onion">Onion<br />
-            <label>Other</label><br />
-            <input type="checkbox" name="other" value="pineapple">Pineapple<br />
-            <input type="checkbox" name="other" value="extra-cheese">Extra Cheese<br />
-            <button class="btn" id="back-to-size">Back</button>
-            <button class="btn" id="toppings-next">Next</button>
-          </div>
-          <div class="panel" id="receive-group">
-            <p>Is this order for pickup or delivery?</p>
-            <div class="radio">
-              <label>
-                <input type="radio" name="receive" value="pickup" checked>
-                Pickup
-              </label>
+      <div class="row">
+        <div class="col-lg-6">
+          <form id="pizza-order">
+            <div class="form-group panel" id="name-group">
+              <label for="customer-name">Please enter a name for your order:</label>
+              <input id="customer-name" class="form-control" type="text" required>
+              <button class="btn" id="name-next">Next</button>
             </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="receive" value="delivery">
-                Delivery
-              </label>
+            <div class="panel" id="size-group">
+              <h3>What size pizza would you like?</h3>
+              <select class="form-control" id="pizza-size">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+                <option>X-Large</option>
+              </select>
+              <button class="btn" id="back-to-name">Back</button>
+              <button class="btn" id="size-next">Next</button>
             </div>
-            <button class="btn" id="back-to-toppings">Back</button>
-            <button class="btn" type="submit">Submit your order</button>
+            <div class="form-group panel" id="toppings-group">
+              <h3>Please select the toppings you would like:</h3>
+              <label>Meats</label><br />
+              <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br />
+              <input type="checkbox" name="meat" value="sausage">Sausage<br />
+              <input type="checkbox" name="meat" value="bacon">Bacon<br />
+              <input type="checkbox" name="meat" value="ham">Ham<br />
+              <input type="checkbox" name="meat" value="chicken">Chicken<br /><br />
+              <label>Veggies</label><br />
+              <input type="checkbox" name="veggies" value="spinach">Spinach<br />
+              <input type="checkbox" name="veggies" value="mushroom">Mushroom<br />
+              <input type="checkbox" name="veggies" value="olives">Olives<br />
+              <input type="checkbox" name="veggies" value="onion">Onion<br /><br />
+              <label>Other</label><br />
+              <input type="checkbox" name="other" value="pineapple">Pineapple<br />
+              <input type="checkbox" name="other" value="extra-cheese">Extra Cheese<br />
+              <button class="btn" id="back-to-size">Back</button>
+              <button class="btn" id="toppings-next">Next</button>
+            </div>
+            <div class="panel" id="receive-group">
+              <p>Is this order for pickup or delivery?</p>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="receive" value="pickup" checked>
+                  Pickup
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="receive" value="delivery">
+                  Delivery
+                </label>
+              </div>
+              <button class="btn" id="back-to-toppings">Back</button>
+              <button class="btn" type="submit">Submit your order</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+          <div class="panel" id="output">
+            <h3><span id="your-name"></span>'s pizza:</h3>
+            <ul>
+              <li>Size: <span id="your-size"></span></p></li>
+              <li>Toppings: <ul id="your-toppings"></ul></li>
+            <h3>Price:</h3>
+            <p><span id="price"></span></p>
           </div>
-        </form>
-      </div>
-      <div class="output">
-
-        <p><span id="price"></span></p>
+        </div>
       </div>
     </div>
   </body>

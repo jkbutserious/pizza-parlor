@@ -1,11 +1,45 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: x-large;
+  color: white;
+}
+.jumbotron {
+  background-color: #006491;
+  padding: 0 0 1rem 0;
+}
+#name-group {
+  z-index: 5;
+  position: absolute;
+}
 #size-group {
+  z-index: 4;
+  position: absolute;
   display: none;
 }
 
 #toppings-group {
+  z-index: 3;
+  position: absolute;
   display: none;
 }
 
 #receive-group {
+  z-index: 2;
+  position: absolute;
+  display: none;
+}
+
+.panel {
+  background-color: #E31837;
+  border: solid 2px;
+  padding: 3rem;
+  min-height: 40rem;
+  min-width: 60rem;
+}
+
+#output {
+  text-align: left;
+  float: right;
+  min-width: 40rem;;
   display: none;
 }
