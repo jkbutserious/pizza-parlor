@@ -8,10 +8,12 @@ body {
   padding: 0 0 1rem 0;
   text-align: center;
 }
+
 #name-group {
   z-index: 5;
   position: absolute;
 }
+
 #size-group {
   z-index: 4;
   position: absolute;
@@ -30,12 +32,26 @@ body {
   display: none;
 }
 
+#address-label {
+  display: none;
+}
+
+#customer-address {
+  display: none;
+}
+
+.btn {
+  background-color: 006491;
+}
+
 .panel {
   background-color: #E31837;
   border: solid 2px;
   padding: 3rem;
   min-height: 40rem;
   min-width: 60rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 3rem darkslategray;
 }
 
 #output {
@@ -43,4 +59,8 @@ body {
   float: right;
   min-width: 40rem;;
   display: none;
+}
+
+#output ul {
+  list-style-type: none;
 }

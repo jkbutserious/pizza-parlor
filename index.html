@@ -19,7 +19,7 @@
             <div class="form-group panel" id="name-group">
               <label for="customer-name">Please enter a name for your order:</label>
               <input id="customer-name" class="form-control" type="text">
-              <button class="btn" id="name-next">Next</button>
+              <button class="btn-primary" id="name-next">Next</button>
             </div>
             <div class="panel" id="size-group">
               <h3>What size pizza would you like?</h3>
@@ -29,44 +29,46 @@
                 <option>Large</option>
                 <option>X-Large</option>
               </select>
-              <button class="btn" id="back-to-name">Back</button>
-              <button class="btn" id="size-next">Next</button>
+              <button class="btn-primary" id="back-to-name">Back</button>
+              <button class="btn-primary" id="size-next">Next</button>
             </div>
             <div class="form-group panel" id="toppings-group">
               <h3>Please select the toppings you would like:</h3>
               <label>Meats</label><br />
-              <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br />
-              <input type="checkbox" name="meat" value="sausage">Sausage<br />
-              <input type="checkbox" name="meat" value="bacon">Bacon<br />
-              <input type="checkbox" name="meat" value="ham">Ham<br />
-              <input type="checkbox" name="meat" value="chicken">Chicken<br /><br />
+              <input type="checkbox" name="meat" value="pepperoni" autocomplete="off">Pepperoni<br />
+              <input type="checkbox" name="meat" value="sausage" autocomplete="off">Sausage<br />
+              <input type="checkbox" name="meat" value="bacon" autocomplete="off">Bacon<br />
+              <input type="checkbox" name="meat" value="ham" autocomplete="off">Ham<br />
+              <input type="checkbox" name="meat" value="chicken" autocomplete="off">Chicken<br /><br />
               <label>Veggies</label><br />
-              <input type="checkbox" name="veggies" value="spinach">Spinach<br />
-              <input type="checkbox" name="veggies" value="mushroom">Mushroom<br />
-              <input type="checkbox" name="veggies" value="olives">Olives<br />
-              <input type="checkbox" name="veggies" value="onion">Onion<br /><br />
+              <input type="checkbox" name="veggies" value="spinach" autocomplete="off">Spinach<br />
+              <input type="checkbox" name="veggies" value="mushroom" autocomplete="off">Mushroom<br />
+              <input type="checkbox" name="veggies" value="olives" autocomplete="off">Olives<br />
+              <input type="checkbox" name="veggies" value="onion" autocomplete="off">Onion<br /><br />
               <label>Other</label><br />
-              <input type="checkbox" name="other" value="pineapple">Pineapple<br />
-              <input type="checkbox" name="other" value="extra-cheese">Extra Cheese<br />
-              <button class="btn" id="back-to-size">Back</button>
-              <button class="btn" id="toppings-next">Next</button>
+              <input type="checkbox" name="other" value="pineapple" autocomplete="off">Pineapple<br />
+              <input type="checkbox" name="other" value="extra-cheese" autocomplete="off">Extra Cheese<br />
+              <button class="btn-primary" id="back-to-size">Back</button>
+              <button class="btn-primary" id="toppings-next">Next</button>
             </div>
             <div class="panel" id="receive-group">
               <p>Is this order for pickup or delivery?</p>
               <div class="radio">
                 <label>
-                  <input type="radio" name="receive" value="pickup" checked>
+                  <input type="radio" name="receive" value="pickup" checked autocomplete="off">
                   Pickup
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="receive" value="delivery">
+                  <input id="delivery-option" type="radio" name="receive" value="delivery" autocomplete="off">
                   Delivery
                 </label>
               </div>
-              <button class="btn" id="back-to-toppings">Back</button>
-              <button class="btn" type="submit">Submit your order</button>
+              <label id= "address-label" for="customer-address">Please enter your address:</label>
+              <input id="customer-address" class="form-control" type="text">
+              <button class="btn-primary" id="back-to-toppings">Back</button>
+              <button class="btn-primary" type="submit">Submit your order</button>
             </div>
           </form>
         </div>
@@ -77,6 +79,7 @@
             <ul>
               <li>Size: <span id="your-size"></span></p></li>
               <li>Toppings: <ul id="your-toppings"></ul></li>
+            </ul>
             <h3>Price:</h3>
             <p><span id="price"></span></p>
           </div>

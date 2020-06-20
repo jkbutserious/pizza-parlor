@@ -101,4 +101,8 @@ $(document).ready(function() {
     $("#toppings-group").toggle("slide");
     $("#receive-group").toggle("slide");
   })
+  $("#delivery-option").click(function() {
+    $("#address-label").toggle();
+    $("#customer-address").toggle();
+  })
 })
