@@ -1,12 +1,16 @@
-# TITLE
+# Pizza by Alfredo
 
-#### BRIEF DESCRIPTION, 6.15.2020
+#### JS Object Constructor and Object Prototype Exercise for Epicodus, 6.19.2020
 
 #### By Jeff Kim
 
 ## Description
 
-_DETAILED DESCRIPTION_
+Yes, we all know about Alfredo's Pizza Kitchen. We _all_ know that "there’s a very big difference between these two pizza places. Both in quality of ingredients, and overall taste." Well, we are **NOT** Alfredo's Pizza Kitchen, we are Pizza by Alfredo and we deliver! Please place your order using our wonderful new website and we will be happy serve you a reasonable amount of pretty good pizza.
+
+**Please note**: We no longer accept coupons.
+
+This site uses JavaScript object constructors and object prototypes to store information about a user's pizza order, display that information as the user proceeds through their order, and updates the price of their order accordingly. Users can choose pickup or delivery - which will prompt them to enter their address to complete their order.
 
 ## Specs
 
@@ -27,15 +31,20 @@ Sample Output: Toppings are assigned to the pizza object and the displayed price
 To use this site:
 
 1. Open your preferred browser.
-2. Navigate to https://jkbutserious.github.io/REPO-NAME.
-3. USER INSTRUCTIONS
+2. Navigate to https://jkbutserious.github.io/pizza-parlor.
+3. Enter your name and click the **Next** button.
+4. Choose your preferred pizza size using the drop-down menu and click the **Next** button.
+5. Choose any toppings you would like to add to your pizza by clicking the check box next to your desired toppings. When you have selected all toppings, click the **Next** button.
+6. Choose whether you want your order to be for **Pickup** or **Delivery** using the radio buttons. If you want to order Delivery, enter your address in the text field.
+7. Click **Submit Order**.
+
 
 You will receive output in the form of a range of numbers and strings.
 
 To contribute to this project:
 
 1. Open your preferred browser.
-2. Navigate to https://github.com/jkbutserious/REPO-NAME.
+2. Navigate to https://github.com/jkbutserious/pizza-parlor.
 3. Log into or sign up for your GitHub account.
 4. Click the **Fork** button to copy the repository and all source code.
 5. From your forked repository, you can download or clone the repository, by clicking the **Clone or download** button.

@@ -38,16 +38,11 @@ $(document).ready(function() {
   newPizza.veggies = [];
   newPizza.other = [];
   $("#name-next").click(function() {
-    // if (#customer-name) {
-      newPizza.name = $("#customer-name").val();
-      $("#your-name").text(newPizza.name);
-      $("#name-group").toggle("slide");
-      $("#size-group").toggle("slide");
-      $("#output").show();
-    // }
-    // else {
-    //   alert("Please enter your name")
-    // }
+    newPizza.name = $("#customer-name").val();
+    $("#your-name").text(newPizza.name);
+    $("#name-group").toggle("slide");
+    $("#size-group").toggle("slide");
+    $("#output").show();
   });
   $("#back-to-name").click(function() {
     $("#name-group").toggle("slide");
@@ -101,6 +96,7 @@ $(document).ready(function() {
     subtotal += newPizza.priceCalculator(newPizza.meats, newPizza.veggies, newPizza.other);
     if (custReceive === "delivery") {
       subtotal += 3;
+      return subtotal;
     };
     $("#price").text("$" + parseFloat(subtotal).toFixed(2));
   });
