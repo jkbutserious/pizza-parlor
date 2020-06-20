@@ -60,11 +60,16 @@ $(document).ready(function() {
     $("#price").text("$" + parseFloat(subtotal).toFixed(2));
   });
   $("#name-next").click(function() {
-    newPizza.name = $("#customer-name").val();
-    $("#your-name").text(newPizza.name);
-    $("#name-group").toggle("slide");
-    $("#size-group").toggle("slide");
-    $("#output").show();
+    // if (newPizza.name) {
+      newPizza.name = $("#customer-name").val();
+      $("#your-name").text(newPizza.name);
+      $("#name-group").toggle("slide");
+      $("#size-group").toggle("slide");
+      $("#output").show();
+    // }
+    // else {
+    //   alert("Please enter your name")
+    // }
   })
   $("#back-to-name").click(function() {
     $("#name-group").toggle("slide");
@@ -80,6 +85,9 @@ $(document).ready(function() {
     $("#toppings-group").toggle("slide");
   })
   $("#toppings-next").click(function() {
+    (newPizza.meats).forEach(function(element) {
+      $("your-toppings").append("<li>" + element + "</li>");
+    });
     $("#toppings-group").toggle("slide");
     $("#receive-group").toggle("slide");
   })
