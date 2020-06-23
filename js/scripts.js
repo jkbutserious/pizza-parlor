@@ -22,7 +22,6 @@ PizzaOrder.prototype.priceCalculator = function(checkedMeats, checkedVeggies, ch
   else if (this.size === "X-Large") {
     totalPrice = 13;
   }
-
   // Toppings price calculation
   const meatsPrice = checkedMeats.length * 0.5;
   const veggiesPrice = checkedVeggies.length * 0.25;
@@ -31,8 +30,16 @@ PizzaOrder.prototype.priceCalculator = function(checkedMeats, checkedVeggies, ch
   totalPrice += toppingsPrice;
   return totalPrice
 }
+
 // User Interface Logic
 $(document).ready(function() {
+  $("#pizza-order").keypress(
+    function(event){
+      if (event.which == '13') {
+        event.preventDefault();
+      }
+  });
+
   let newPizza = new PizzaOrder;
   newPizza.meats = [];
   newPizza.veggies = [];
@@ -94,7 +101,7 @@ $(document).ready(function() {
     $("#your-name-tracker").text(newPizza.name);
     $("#your-address-tracker").text($("#customer-address").val());
   });
-  $("#pizza-order").submit(function() {
+  $("#pizza-order").submit(function(event) {
     event.preventDefault();
     const custReceive = $("input:radio[name=receive]:checked").val();
     let subtotal = 0;
@@ -102,12 +109,11 @@ $(document).ready(function() {
     subtotal += newPizza.priceCalculator(newPizza.meats, newPizza.veggies, newPizza.other);
     if (custReceive === "delivery") {
       subtotal += 3;
-      return subtotal;
+      // return subtotal;
     };
     $("#price").text("$" + parseFloat(subtotal).toFixed(2));
-    // $("#back-to-toppings").toggle("slide");
-    // $("#submit-button").toggle("slide");
   });
+
 
  
 })

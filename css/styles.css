@@ -64,6 +64,7 @@ body {
 #pizza-tracker {
   position: relative;
   display: none;
+  text-align: center;
 }
 
 #pizza-tracker img {
