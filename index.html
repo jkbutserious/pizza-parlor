@@ -19,7 +19,7 @@
             <div class="form-group panel" id="name-group">
               <label for="customer-name">Please enter a name for your order:</label>
               <input id="customer-name" class="form-control" type="text">
-              <button class="btn-primary" id="name-next">Next</button>
+              <button class="btn-primary" id="name-next" type="button">Next</button>
             </div>
             <div class="panel" id="size-group">
               <h3>What size pizza would you like?</h3>
@@ -29,8 +29,8 @@
                 <option>Large</option>
                 <option>X-Large</option>
               </select>
-              <button class="btn-primary" id="back-to-name">Back</button>
-              <button class="btn-primary" id="size-next">Next</button>
+              <button class="btn-primary" id="back-to-name" type="button">Back</button>
+              <button class="btn-primary" id="size-next" type="button">Next</button>
             </div>
             <div class="form-group panel" id="toppings-group">
               <h3>Please select the toppings you would like:</h3>
@@ -48,8 +48,8 @@
               <label>Other</label><br />
               <input type="checkbox" name="other" value="pineapple" autocomplete="off">Pineapple<br />
               <input type="checkbox" name="other" value="extra-cheese" autocomplete="off">Extra Cheese<br />
-              <button class="btn-primary" id="back-to-size">Back</button>
-              <button class="btn-primary" id="toppings-next">Next</button>
+              <button class="btn-primary" id="back-to-size" type="button">Back</button>
+              <button class="btn-primary" id="toppings-next" type="button">Next</button>
             </div>
             <div class="panel" id="receive-group">
               <p>Is this order for pickup or delivery?</p>
@@ -68,7 +68,7 @@
               <div class="form-group">
                 <label id= "address-label" for="customer-address">Please enter your address:</label>
                 <input id="customer-address" class="form-control" type="text">
-                <button class="btn-primary" id="back-to-toppings">Back</button>
+                <button class="btn-primary" id="back-to-toppings" type="button">Back</button>
                 <button class="btn-primary" id="submit-button" type="submit">Submit your order</button>
               </div>
             </div>
@@ -89,7 +89,19 @@
       </div>
 
       <div class="row">
-        <div id="pizza-tracker" class="panel"></div>
+        <div id="pizza-tracker" class="panel">
+          <div class="row">
+            <div class="col-lg-3">
+              <h3><span id="your-name-tracker"></span>'s pizza is on the way to:</h3>
+            </div>
+            <div class="col-lg-6">
+              <img src="./img/pizza delivery.gif" alt="Pizza delivery driver" />
+            </div>
+            <div class="col-lg-3">
+              <h3><span id="your-address-tracker"></span></h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

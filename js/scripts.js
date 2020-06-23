@@ -83,10 +83,16 @@ $(document).ready(function() {
   $("#back-to-toppings").click(function() {
     $("#toppings-group").toggle("slide");
     $("#receive-group").toggle("slide");
+    $("#pizza-tracker").hide("slide");
   });
   $("#delivery-option").click(function() {
     $("#address-label").toggle();
     $("#customer-address").toggle();
+  });
+  $("#submit-button").click(function() {
+    $("#pizza-tracker").show("slide");
+    $("#your-name-tracker").text(newPizza.name);
+    $("#your-address-tracker").text($("#customer-address").val());
   });
   $("#pizza-order").submit(function() {
     event.preventDefault();
@@ -101,7 +107,6 @@ $(document).ready(function() {
     $("#price").text("$" + parseFloat(subtotal).toFixed(2));
     // $("#back-to-toppings").toggle("slide");
     // $("#submit-button").toggle("slide");
-    // $("#pizza-tracker").toggle("slide");
   });
 
  
