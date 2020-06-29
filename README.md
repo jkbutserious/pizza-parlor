@@ -73,7 +73,8 @@ To contribute to this project:
 ## Known Bugs
 
 **Initial Release**
-* No known bugs
+* Divs overlap on smaller screens
+* Toppings are pushed to object value arrays multiple times when moving back and forth through the order form
 
 ## Support and contact details
 
