@@ -1,13 +1,13 @@
 // Business Logic
-function PizzaOrder(name, size, meats, veggies, other) {
-  this.name = name,
-  this.size = size,
-  this.meats = meats,
-  this.veggies = veggies,
-  this.other = other
+function PizzaOrder() {
+  this.name = "",
+  this.size = "",
+  this.meats = [],
+  this.veggies = [],
+  this.other = []
 }
 
-PizzaOrder.prototype.priceCalculator = function(checkedMeats, checkedVeggies, checkedOther) {
+PizzaOrder.prototype.priceCalculator = function() {
   let totalPrice = 0;
   // Size price calculation
   if (this.size === "Small") {
@@ -23,9 +23,9 @@ PizzaOrder.prototype.priceCalculator = function(checkedMeats, checkedVeggies, ch
     totalPrice = 13;
   }
   // Toppings price calculation
-  const meatsPrice = checkedMeats.length * 0.5;
-  const veggiesPrice = checkedVeggies.length * 0.25;
-  const otherPrice = checkedOther.length * 0.35;
+  const meatsPrice = this.meats.length * 0.5;
+  const veggiesPrice = this.veggies.length * 0.25;
+  const otherPrice = this.other.length * 0.35;
   const toppingsPrice = meatsPrice + veggiesPrice + otherPrice;
   totalPrice += toppingsPrice;
   return totalPrice
@@ -40,10 +40,7 @@ $(document).ready(function() {
       }
   });
 
-  let newPizza = new PizzaOrder;
-  newPizza.meats = [];
-  newPizza.veggies = [];
-  newPizza.other = [];
+  let newPizza = new PizzaOrder();
   $("#name-next").click(function() {
     newPizza.name = $("#customer-name").val();
     $("#your-name").text(newPizza.name);
@@ -66,6 +63,7 @@ $(document).ready(function() {
     $("#toppings-group").toggle("slide");
   });
   $("#toppings-next").click(function() {
+    $("ul#your-toppings").empty();
     $("input:checkbox[name=meat]:checked").each(function(){ 
       newPizza.meats.push($(this).val());
     });
@@ -92,9 +90,13 @@ $(document).ready(function() {
     $("#receive-group").toggle("slide");
     $("#pizza-tracker").hide("slide");
   });
+  $("#pickup-option").click(function() {
+    $("#address-label").hide();
+    $("#customer-address").hide();
+  });
   $("#delivery-option").click(function() {
-    $("#address-label").toggle();
-    $("#customer-address").toggle();
+    $("#address-label").show();
+    $("#customer-address").show();
   });
   $("#submit-button").click(function() {
     $("#pizza-tracker").show("slide");

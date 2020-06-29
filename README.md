@@ -26,6 +26,19 @@ Sample Output: The appropriate size is assigned to the pizza object and the base
 Sample Input: User chooses "pepperoni" and "mushrooms" using check boxes
 Sample Output: Toppings are assigned to the pizza object and the displayed price is updated
 
+4. Users should be able to choose whether they want to have their pizza delivered or if they want to pick up their order
+Sample Input: Click a radio button for "Delivery"
+Sample Output: Text field is displayed that allows the user to input their address
+
+5. Users should be able to submit their order and see that their pizza is on the way
+Sample Input: Click "Submit Order" button
+Sample Output: Pizza tracker area is displayed that shows the user that their pizza is being delivered to their address
+
+6. Users should see their price calculated for their final order based on a formula where:
+* Size price: Small - $7, medium - $9, large - $11, x-large - $13
+* Toppings price: Meats - $0.50, veggies - $0.25, others - $0.35
+* Receive method: Pickup - $0, delivery - $3
+
 ## Setup/Installation Requirements
 
 To use this site:

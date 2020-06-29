@@ -10,24 +10,20 @@ body {
 }
 
 #name-group {
-  /* z-index: 4; */
   position: absolute;
 }
 
 #size-group {
-  /* z-index: 3; */
   position: absolute;
   display: none;
 }
 
 #toppings-group {
-  /* z-index: 2; */
   position: absolute;
   display: none;
 }
 
 #receive-group {
-  /* z-index: 1; */
   position: absolute;
   display: none;
 }
@@ -62,7 +58,6 @@ body {
 }
 
 #pizza-tracker {
-  position: relative;
   display: none;
   text-align: center;
 }
@@ -72,5 +67,4 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 50%; */
 }

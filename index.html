@@ -14,7 +14,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-md-6">
           <form id="pizza-order">
             <div class="form-group panel" id="name-group">
               <label for="customer-name">Please enter a name for your order:</label>
@@ -55,7 +55,7 @@
               <p>Is this order for pickup or delivery?</p>
               <div class="radio">
                 <label>
-                  <input type="radio" name="receive" value="pickup" checked autocomplete="off">
+                  <input id="pickup-option" type="radio" name="receive" value="pickup" checked autocomplete="off">
                   Pickup
                 </label>
               </div>
@@ -74,8 +74,8 @@
             </div>
           </form>
         </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-4">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
           <div class="panel" id="output">
             <h3><span id="your-name"></span>'s pizza:</h3>
             <ul>
@@ -91,13 +91,13 @@
       <div class="row">
         <div id="pizza-tracker" class="panel">
           <div class="row">
-            <div class="col-lg-3">
+            <div class="col-md-3">
               <h3><span id="your-name-tracker"></span>'s pizza is on the way to:</h3>
             </div>
-            <div class="col-lg-6">
+            <div class="col-md-6">
               <img src="./img/pizza delivery.gif" alt="Pizza delivery driver" />
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-3">
               <h3><span id="your-address-tracker"></span></h3>
             </div>
           </div>
