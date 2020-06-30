@@ -11,21 +11,25 @@ body {
 
 #name-group {
   position: absolute;
+  width: 40vw;
 }
 
 #size-group {
   position: absolute;
   display: none;
+  width: 40vw;
 }
 
 #toppings-group {
   position: absolute;
   display: none;
+  width: 40vw;
 }
 
 #receive-group {
   position: absolute;
   display: none;
+  width: 40vw;
 }
 
 #address-label {
@@ -40,8 +44,8 @@ body {
   background-color: #E31837;
   border: solid 2px;
   padding: 3rem;
-  min-height: 40rem;
-  min-width: 60rem;
+  /* min-height: 40rem;
+  min-width: 60rem; */
   border-radius: 2rem;
   box-shadow: 0 0 3rem darkslategray;
 }
@@ -49,7 +53,7 @@ body {
 #output {
   text-align: left;
   float: right;
-  min-width: 40rem;;
+  /* min-width: 40rem;; */
   display: none;
 }
 

@@ -106,12 +106,10 @@ $(document).ready(function() {
   $("#pizza-order").submit(function(event) {
     event.preventDefault();
     const custReceive = $("input:radio[name=receive]:checked").val();
-    let subtotal = 0;
     
-    subtotal += newPizza.priceCalculator(newPizza.meats, newPizza.veggies, newPizza.other);
+    let subtotal = newPizza.priceCalculator();
     if (custReceive === "delivery") {
       subtotal += 3;
-      // return subtotal;
     };
     $("#price").text("$" + parseFloat(subtotal).toFixed(2));
   });
